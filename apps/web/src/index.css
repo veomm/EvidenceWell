@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Premium Editorial Palette */
+    --background: 40 33% 98%; /* Soft off-white */
+    --foreground: 220 20% 15%; /* Dark, highly legible text */
+
+    --card: 0 0% 100%; /* Crisp white for elevation */
+    --card-foreground: 220 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 15%;
+
+    --primary: 155 25% 40%; /* Muted editorial green */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 36 25% 93%; /* Warm neutral */
+    --secondary-foreground: 220 20% 25%;
+
+    --muted: 220 15% 94%; /* Light gray */
+    --muted-foreground: 220 10% 45%;
+
+    --accent: 36 25% 90%;
+    --accent-foreground: 155 25% 30%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 15% 90%;
+    --input: 220 15% 90%;
+    --ring: 155 25% 40%;
+
+    --radius: 0.5rem; /* Subtle rounding, not too playful */
+  }
+
+  .dark {
+    --background: 220 20% 10%;
+    --foreground: 40 20% 90%;
+
+    --card: 220 20% 14%;
+    --card-foreground: 40 20% 90%;
+
+    --popover: 220 20% 14%;
+    --popover-foreground: 40 20% 90%;
+
+    --primary: 155 20% 50%;
+    --primary-foreground: 220 20% 10%;
+
+    --secondary: 220 15% 18%;
+    --secondary-foreground: 40 20% 90%;
+
+    --muted: 220 15% 18%;
+    --muted-foreground: 220 10% 65%;
+
+    --accent: 220 15% 18%;
+    --accent-foreground: 40 20% 90%;
+
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 155 20% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lora', serif;
+    @apply text-balance tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .prose-editorial {
+    @apply max-w-[65ch] mx-auto text-lg leading-loose text-foreground/90;
+  }
+  .prose-editorial p {
+    @apply mb-8;
+  }
+  .prose-editorial h2 {
+    @apply text-3xl font-bold mt-16 mb-6 text-foreground;
+  }
+  .prose-editorial h3 {
+    @apply text-2xl font-semibold mt-10 mb-4 text-foreground;
+  }
+  .prose-editorial ul {
+    @apply list-disc pl-6 mb-8 space-y-3;
+  }
+  .prose-editorial li {
+    @apply pl-2;
+  }
+  .prose-editorial a {
+    @apply text-primary underline underline-offset-4 decoration-primary/30 hover:decoration-primary transition-colors;
+  }
+  .prose-editorial blockquote {
+    @apply border-l-4 border-primary pl-6 py-2 my-10 italic text-xl text-foreground/80 font-serif bg-primary/5 rounded-r-lg;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
